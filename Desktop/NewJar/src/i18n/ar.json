@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "features": "المزايا",
+    "contact": "التواصل",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "name": "الاسم الكامل",
+    "phone": "رقم الهاتف",
+    "role": "نوع الحساب",
+    "loginButton": "دخول",
+    "registerButton": "تسجيل",
+    "welcomeBack": "مرحباً بعودتك",
+    "createAccount": "أنشئ حسابك",
+    "hasAccount": "لديك حساب؟",
+    "noAccount": "ليس لديك حساب؟",
+    "signingIn": "جاري الدخول...",
+    "creatingAccount": "جاري الإنشاء...",
+    "roles": {
+      "union_admin": "مدير الاتحاد (HOA)",
+      "tenant": "مقيم",
+      "contractor": "مزود خدمة",
+      "owner": "مالك عقار"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "إدارة العقارات",
+      "titleAccent": "بذكاء",
+      "subtitle": "منصة جار تربط الملاك والمقيمين ومزودي الخدمات في تجربة واحدة سلسة",
+      "cta": "ابدأ الآن",
+      "learnMore": "اعرف أكثر"
+    },
+    "features": {
+      "title": "كل ما تحتاجه في مكان واحد",
+      "ai":       { "title": "توافق ذكي",     "desc": "نظام الذكاء الاصطناعي يختار أفضل مزود خدمة لكل طلب تلقائياً" },
+      "payments": { "title": "مدفوعات آمنة",  "desc": "ادفع بمدى أو STC Pay أو بطاقتك الائتمانية بأمان تام" },
+      "tracking": { "title": "تتبع لحظي",     "desc": "اعرف حالة طلبك في كل لحظة من الإرسال حتى الإغلاق" },
+      "reports":  { "title": "تقارير مفصلة",  "desc": "تحليلات ومالية شاملة لكل عقاراتك في لوحة واحدة" }
+    },
+    "contact": {
+      "title": "تواصل معنا",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "message": "رسالتك",
+      "send": "إرسال",
+      "sending": "جاري الإرسال..."
+    },
+    "footer": {
+      "rights": "جميع الحقوق محفوظة",
+      "platform": "منصة جار للإدارة العقارية"
+    }
+  },
+  "hoa": {
+    "dashboard": "لوحة التحكم",
+    "requests": "طلبات الصيانة",
+    "dispatch": "إسناد الطلبات",
+    "announcements": "الإعلانات",
+    "financials": "المالية",
+    "openRequests": "طلبات مفتوحة",
+    "pendingPayments": "مدفوعات معلقة",
+    "activeProviders": "مزودون نشطون",
+    "aiRecommended": "موصى به بالذكاء الاصطناعي",
+    "assignProvider": "إسناد مزود",
+    "kanban": {
+      "submitted": "مُقدَّم",
+      "assigned": "مُسنَد",
+      "inProgress": "قيد التنفيذ",
+      "completed": "مكتمل"
+    }
+  },
+  "resident": {
+    "home": "الرئيسية",
+    "newRequest": "طلب جديد",
+    "myRequests": "طلباتي",
+    "payments": "المدفوعات",
+    "notifications": "الإشعارات",
+    "requestStatus": "حالة الطلب",
+    "submitRequest": "إرسال الطلب",
+    "categories": {
+      "plumbing": "سباكة",
+      "electrical": "كهرباء",
+      "hvac": "تكييف",
+      "painting": "دهان",
+      "cleaning": "تنظيف",
+      "other": "أخرى"
+    }
+  },
+  "provider": {
+    "jobQueue": "قائمة الأعمال",
+    "activeJob": "العمل الحالي",
+    "earnings": "الأرباح",
+    "profile": "الملف الشخصي",
+    "acceptJob": "قبول",
+    "declineJob": "رفض",
+    "updateStatus": "تحديث الحالة",
+    "submitCompletion": "تأكيد الإتمام"
+  },
+  "owner": {
+    "overview": "نظرة عامة",
+    "properties": "العقارات",
+    "financials": "المالية",
+    "maintenance": "الصيانة",
+    "reports": "التقارير",
+    "occupancyRate": "نسبة الإشغال",
+    "netYield": "صافي العائد",
+    "totalUnits": "إجمالي الوحدات"
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "back": "رجوع",
+    "next": "التالي",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sar": "ر.س",
+    "noData": "لا توجد بيانات",
+    "status": {
+      "submitted": "مُقدَّم",
+      "assigned": "مُسنَد",
+      "in_progress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "under_review": "قيد المراجعة",
+      "closed": "مغلق"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "role": "Account Type",
+    "loginButton": "Sign In",
+    "registerButton": "Register",
+    "welcomeBack": "Welcome back",
+    "createAccount": "Create your account",
+    "hasAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "roles": {
+      "union_admin": "HOA Manager",
+      "tenant": "Resident",
+      "contractor": "Service Provider",
+      "owner": "Property Owner"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Property Management",
+      "titleAccent": "Reimagined",
+      "subtitle": "Jar connects HOA managers, residents, and service providers in one seamless platform",
+      "cta": "Get Started",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "Everything you need in one place",
+      "ai":       { "title": "AI Matching",      "desc": "Our AI automatically selects the best provider for every maintenance request" },
+      "payments": { "title": "Secure Payments",  "desc": "Pay with Mada, STC Pay, or credit card — fully secured and escrowed" },
+      "tracking": { "title": "Live Tracking",    "desc": "Follow your request from submission to closure in real time" },
+      "reports":  { "title": "Detailed Reports", "desc": "Comprehensive analytics and financials for all your properties" }
+    },
+    "contact": {
+      "title": "Get in touch",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "platform": "Jar Property Management Platform"
+    }
+  },
+  "hoa": {
+    "dashboard": "Dashboard",
+    "requests": "Maintenance Requests",
+    "dispatch": "AI Dispatch",
+    "announcements": "Announcements",
+    "financials": "Financials",
+    "openRequests": "Open Requests",
+    "pendingPayments": "Pending Payments",
+    "activeProviders": "Active Providers",
+    "aiRecommended": "AI Recommended",
+    "assignProvider": "Assign Provider",
+    "kanban": {
+      "submitted": "Submitted",
+      "assigned": "Assigned",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    }
+  },
+  "resident": {
+    "home": "Home",
+    "newRequest": "New Request",
+    "myRequests": "My Requests",
+    "payments": "Payments",
+    "notifications": "Notifications",
+    "requestStatus": "Request Status",
+    "submitRequest": "Submit Request",
+    "categories": {
+      "plumbing": "Plumbing",
+      "electrical": "Electrical",
+      "hvac": "HVAC",
+      "painting": "Painting",
+      "cleaning": "Cleaning",
+      "other": "Other"
+    }
+  },
+  "provider": {
+    "jobQueue": "Job Queue",
+    "activeJob": "Active Job",
+    "earnings": "Earnings",
+    "profile": "Profile",
+    "acceptJob": "Accept",
+    "declineJob": "Decline",
+    "updateStatus": "Update Status",
+    "submitCompletion": "Submit Completion"
+  },
+  "owner": {
+    "overview": "Overview",
+    "properties": "Properties",
+    "financials": "Financials",
+    "maintenance": "Maintenance",
+    "reports": "Reports",
+    "occupancyRate": "Occupancy Rate",
+    "netYield": "Net Yield",
+    "totalUnits": "Total Units"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "sar": "SAR",
+    "noData": "No data available",
+    "status": {
+      "submitted": "Submitted",
+      "assigned": "Assigned",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "under_review": "Under Review",
+      "closed": "Closed"
+    }
+  }
+}

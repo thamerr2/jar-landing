@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:            160 40% 8%;
+    --foreground:            210 40% 98%;
+    --card:                  160 35% 12%;
+    --card-foreground:       210 40% 98%;
+    --popover:               160 40% 8%;
+    --popover-foreground:    210 40% 98%;
+    --primary:               150 52% 69%;
+    --primary-foreground:    160 40% 8%;
+    --secondary:             160 35% 14%;
+    --secondary-foreground:  210 40% 98%;
+    --muted:                 160 35% 14%;
+    --muted-foreground:      215 16% 56%;
+    --accent:                160 35% 14%;
+    --accent-foreground:     210 40% 98%;
+    --destructive:           0 62.8% 50%;
+    --destructive-foreground:210 40% 98%;
+    --border:                160 30% 18%;
+    --input:                 160 30% 18%;
+    --ring:                  150 52% 69%;
+    --radius:                0.75rem;
+    --sidebar-background:    160 40% 6%;
+    --sidebar-foreground:    210 40% 98%;
+    --sidebar-primary:       150 52% 69%;
+    --sidebar-primary-foreground: 160 40% 8%;
+    --sidebar-accent:        160 35% 14%;
+    --sidebar-accent-foreground:  210 40% 98%;
+    --sidebar-border:        160 30% 14%;
+    --sidebar-ring:          150 52% 69%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  }
+}
+
+[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
