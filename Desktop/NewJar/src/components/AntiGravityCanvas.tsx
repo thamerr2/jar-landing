@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 
-const BG     = "#0D1F1A";
-const GREEN  = "#7FD4A0";
-const GREEN2 = "#A8E6C3";
-const PURPLE = "#0D9488";
-const TEAL   = "#14B8A6";
-const MINT   = "#10B981";
-const PCOLS  = [GREEN, GREEN2, "#FDE68A", PURPLE, "#C4B5FD", MINT, TEAL];
+const BG     = "#2A2F40";
+const PCOLS  = [
+  "#BC7D37", // bronze
+  "#EED6AC", // sand
+  "#D4A055", // light bronze
+  "#F0EAD8", // cream
+  "#8B6A3A", // dark bronze
+  "#C4A882", // medium sand
+  "#FEF7DC", // warm cream
+];
 
 interface Particle {
   x: number; y: number;
@@ -21,20 +24,20 @@ function mkP(W: number, H: number): Particle {
   const a = Math.random() * Math.PI * 2;
   const r = 40 + Math.random() * Math.min(W, H) * 0.45;
   return {
-    x:          W / 2 + Math.cos(a) * r,
-    y:          H / 2 + Math.sin(a) * r,
-    vx:         Math.cos(a + Math.PI / 2) * (0.06 + Math.random() * 0.18) * (Math.random() > 0.5 ? 1 : -1),
-    vy:         -(0.05 + Math.random() * 0.2),
-    size:       0.7 + Math.random() * 2.4,
-    color:      PCOLS[Math.floor(Math.random() * PCOLS.length)],
-    opacity:    0,
-    baseOpacity:0.15 + Math.random() * 0.45,
-    isDash:     Math.random() > 0.42,
-    dashAngle:  Math.random() * Math.PI * 2,
-    dashLen:    4 + Math.random() * 12,
-    driftSpeed: 0.3 + Math.random() * 0.7,
-    driftPhase: Math.random() * Math.PI * 2,
-    driftAmp:   0.2 + Math.random() * 0.5,
+    x:           W / 2 + Math.cos(a) * r,
+    y:           H / 2 + Math.sin(a) * r,
+    vx:          Math.cos(a + Math.PI / 2) * (0.25 + Math.random() * 0.6) * (Math.random() > 0.5 ? 1 : -1),
+    vy:          -(0.4 + Math.random() * 0.8),
+    size:        0.7 + Math.random() * 2.4,
+    color:       PCOLS[Math.floor(Math.random() * PCOLS.length)],
+    opacity:     (0.15 + Math.random() * 0.45) * 0.6,
+    baseOpacity: 0.15 + Math.random() * 0.45,
+    isDash:      Math.random() > 0.42,
+    dashAngle:   Math.random() * Math.PI * 2,
+    dashLen:     4 + Math.random() * 12,
+    driftSpeed:  0.3 + Math.random() * 0.7,
+    driftPhase:  Math.random() * Math.PI * 2,
+    driftAmp:    0.4 + Math.random() * 0.8,
   };
 }
 
@@ -59,7 +62,7 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let tick = 0;
-    let particles: Particle[] = Array.from({ length: 80 }, () => mkP(canvas.width, canvas.height));
+    let particles: Particle[] = Array.from({ length: 50 }, () => mkP(canvas.width, canvas.height));
     let raf: number;
 
     const draw = () => {
@@ -69,9 +72,9 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
 
       const cx = W / 2, cy = H / 2;
       const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(W, H) * 0.6);
-      grad.addColorStop(0,    "rgba(15,23,42,0)");
-      grad.addColorStop(0.58, "rgba(15,23,42,0)");
-      grad.addColorStop(1,    "rgba(13,31,26,0.55)");
+      grad.addColorStop(0,    "rgba(42,47,64,0)");
+      grad.addColorStop(0.58, "rgba(42,47,64,0)");
+      grad.addColorStop(1,    "rgba(30,34,50,0.55)");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, W, H);
 
@@ -79,7 +82,7 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
         const wave = Math.sin(tick * 0.008 * p.driftSpeed + p.driftPhase) * p.driftAmp;
         p.x += p.vx + wave * 0.3;
         p.y += p.vy;
-        p.opacity = Math.min(p.baseOpacity, p.opacity + 0.008);
+        p.opacity = Math.min(p.baseOpacity, p.opacity + 0.025);
 
         if (p.x < -20)    p.x = W + 20;
         if (p.x > W + 20) p.x = -20;
