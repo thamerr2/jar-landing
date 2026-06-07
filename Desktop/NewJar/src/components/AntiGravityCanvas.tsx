@@ -10,6 +10,8 @@ const PCOLS  = [
   "#C4A882", // medium sand
   "#FEF7DC", // warm cream
 ];
+const DASH_PROBABILITY = 0.42;
+const GRADIENT_EDGE    = 0.58;
 
 interface Particle {
   x: number; y: number;
@@ -32,7 +34,7 @@ function mkP(W: number, H: number): Particle {
     color:       PCOLS[Math.floor(Math.random() * PCOLS.length)],
     opacity:     (0.15 + Math.random() * 0.45) * 0.6,
     baseOpacity: 0.15 + Math.random() * 0.45,
-    isDash:      Math.random() > 0.42,
+    isDash:      Math.random() > DASH_PROBABILITY,
     dashAngle:   Math.random() * Math.PI * 2,
     dashLen:     4 + Math.random() * 12,
     driftSpeed:  0.3 + Math.random() * 0.7,
@@ -64,6 +66,7 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
     let tick = 0;
     let particles: Particle[] = Array.from({ length: 50 }, () => mkP(canvas.width, canvas.height));
     let raf: number;
+    let running = true;
 
     const draw = () => {
       tick++;
@@ -73,7 +76,7 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
       const cx = W / 2, cy = H / 2;
       const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(W, H) * 0.6);
       grad.addColorStop(0,    "rgba(42,47,64,0)");
-      grad.addColorStop(0.58, "rgba(42,47,64,0)");
+      grad.addColorStop(GRADIENT_EDGE, "rgba(42,47,64,0)");
       grad.addColorStop(1,    "rgba(30,34,50,0.55)");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, W, H);
@@ -108,11 +111,11 @@ export function AntiGravityCanvas({ parallaxOffset = 0 }: { parallaxOffset?: num
       }
 
       ctx.globalAlpha = 1;
-      if (!reducedMotion) raf = requestAnimationFrame(draw);
+      if (!reducedMotion && running) raf = requestAnimationFrame(draw);
     };
 
     raf = requestAnimationFrame(draw);
-    return () => { cancelAnimationFrame(raf); ro.disconnect(); };
+    return () => { running = false; cancelAnimationFrame(raf); ro.disconnect(); };
   }, []);
 
   return (
