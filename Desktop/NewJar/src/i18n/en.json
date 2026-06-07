@@ -35,7 +35,7 @@
     "hero": {
       "title": "Property Management",
       "titleAccent": "Reimagined",
-      "subtitle": "Jar connects HOA managers, residents, and service providers in one seamless platform",
+      "subtitle": "A platform that enables developers, community managers, residents, and service providers to operate within one intelligent ecosystem",
       "cta": "Get Started",
       "learnMore": "Learn More"
     },
@@ -70,6 +70,14 @@
     "activeProviders": "Active Providers",
     "aiRecommended": "AI Recommended",
     "assignProvider": "Assign Provider",
+    "newAnnouncement": "New Announcement",
+    "confirmAssign": "Confirm Assignment",
+    "escrowStatus": "Escrow",
+    "scoreCategory": "Specialty",
+    "scoreLocation": "Location",
+    "scoreRating": "Rating",
+    "scoreCost": "Cost",
+    "selectPrompt": "Select a request to see AI recommendations",
     "kanban": {
       "submitted": "Submitted",
       "assigned": "Assigned",
@@ -81,38 +89,159 @@
     "home": "Home",
     "newRequest": "New Request",
     "myRequests": "My Requests",
+    "activeRequests": "Active",
+    "completedRequests": "Completed",
     "payments": "Payments",
     "notifications": "Notifications",
     "requestStatus": "Request Status",
     "submitRequest": "Submit Request",
+    "greeting": "Hello, {{name}}",
+    "requestTitle": "Issue Title",
+    "priority": "Priority Level",
+    "unit": "Unit",
+    "details": "Details",
+    "chooseCategory": "Choose the type of issue",
+    "requestSent": "Request submitted!",
+    "requestSentSub": "Your request will be reviewed and assigned soon",
+    "activeCount": "You have {{count}} active request",
+    "activeCount_plural": "You have {{count}} active requests",
+    "noActiveRequests": "No active requests",
+    "unread": "{{count}} unread",
+    "markAllRead": "Mark all as read",
+    "titlePlaceholder": "e.g. Water leak in the bathroom",
+    "descPlaceholder": "Describe the issue in detail...",
+    "payment": {
+      "success": "Payment completed successfully",
+      "failed": "Payment failed",
+      "verifyFailed": "Could not verify payment",
+      "startFailed": "Could not initiate payment",
+      "maintenanceFee": "Maintenance fee",
+      "fee": "Payment"
+    },
     "categories": {
       "plumbing": "Plumbing",
       "electrical": "Electrical",
       "hvac": "HVAC",
       "painting": "Painting",
       "cleaning": "Cleaning",
+      "carpentry": "Carpentry",
+      "general": "General",
       "other": "Other"
     }
   },
   "provider": {
-    "jobQueue": "Job Queue",
-    "activeJob": "Active Job",
-    "earnings": "Earnings",
-    "profile": "Profile",
-    "acceptJob": "Accept",
-    "declineJob": "Decline",
-    "updateStatus": "Update Status",
-    "submitCompletion": "Submit Completion"
+    "title": "Provider Portal",
+    "nav": {
+      "jobs": "Jobs",
+      "active": "Active",
+      "earnings": "Earnings",
+      "profile": "Profile"
+    },
+    "jobs": {
+      "title": "Job Queue",
+      "count": "pending",
+      "empty": "No new jobs assigned",
+      "start": "Start Job"
+    },
+    "active": {
+      "title": "Active Job",
+      "empty": "No jobs in progress",
+      "addNote": "Add Note",
+      "markComplete": "Mark Complete",
+      "notePlaceholder": "Progress update…",
+      "completePlaceholder": "Completion notes (optional)…",
+      "complete": "Complete Job",
+      "send": "Send"
+    },
+    "earnings": {
+      "title": "Earnings",
+      "totalSar": "Total Earned (SAR)",
+      "pendingSar": "Pending (SAR)",
+      "history": "Completed Jobs",
+      "empty": "No completed jobs yet"
+    },
+    "profile": {
+      "title": "My Profile",
+      "reviews": "reviews",
+      "verified": "Verified Provider",
+      "specialties": "Specialties"
+    }
   },
   "owner": {
-    "overview": "Overview",
-    "properties": "Properties",
-    "financials": "Financials",
-    "maintenance": "Maintenance",
-    "reports": "Reports",
-    "occupancyRate": "Occupancy Rate",
-    "netYield": "Net Yield",
-    "totalUnits": "Total Units"
+    "title": "Owner Portal",
+    "nav": {
+      "overview": "Overview",
+      "properties": "Properties",
+      "financials": "Financials",
+      "history": "History",
+      "reports": "Reports"
+    },
+    "overview": {
+      "title": "Overview",
+      "properties": "Properties",
+      "openRequests": "Open Requests",
+      "myProperties": "My Properties",
+      "units": "units",
+      "open": "open",
+      "empty": "No properties found"
+    },
+    "detail": {
+      "totalUnits": "Total Units",
+      "occupied": "Occupied",
+      "open": "Open Issues",
+      "units": "Units",
+      "unit": "Unit",
+      "floor": "Floor",
+      "vacant": "Vacant",
+      "openRequests": "Open Maintenance"
+    },
+    "financials": {
+      "title": "Financials",
+      "totalRevenue": "Total Received",
+      "pending": "Pending",
+      "monthly": "Monthly Revenue (SAR)",
+      "history": "Payment History",
+      "empty": "No payment history",
+      "payment": "Payment"
+    },
+    "history": {
+      "title": "Maintenance History",
+      "totalRequests": "Total Requests",
+      "completed": "Completed",
+      "totalCost": "Total Cost",
+      "allProperties": "All Properties",
+      "allStatuses": "All Statuses"
+    },
+    "reports": {
+      "title": "Reports",
+      "export": "Export PDF",
+      "totalRevenue": "Total Revenue",
+      "totalCost": "Total Cost",
+      "netYield": "Net Yield",
+      "completed": "Completed Jobs",
+      "properties": "Properties",
+      "requestsByMonth": "Requests by Month",
+      "requests": "requests"
+    }
+  },
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "urgent": "Urgent"
+  },
+  "paymentStatus": {
+    "pending": "Pending",
+    "processing": "Processing",
+    "completed": "Completed",
+    "failed": "Failed",
+    "refunded": "Refunded"
+  },
+  "errors": {
+    "unexpected": "An unexpected error occurred",
+    "backHome": "Back to Home",
+    "retry": "Try Again",
+    "notFound": "Page not found"
   },
   "common": {
     "loading": "Loading...",
@@ -128,7 +257,10 @@
     "search": "Search",
     "filter": "Filter",
     "sar": "SAR",
+    "reviews": "reviews",
+    "description": "Description",
     "noData": "No data available",
+    "viewAll": "View All",
     "status": {
       "submitted": "Submitted",
       "assigned": "Assigned",

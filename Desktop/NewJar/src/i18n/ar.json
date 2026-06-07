@@ -35,7 +35,7 @@
     "hero": {
       "title": "إدارة العقارات",
       "titleAccent": "بذكاء",
-      "subtitle": "منصة جار تربط الملاك والمقيمين ومزودي الخدمات في تجربة واحدة سلسة",
+      "subtitle": "منصة تُمكّن المطورين ومديري المجتمعات والمقيمين ومزودي الخدمات من العمل ضمن منظومة ذكية متكاملة",
       "cta": "ابدأ الآن",
       "learnMore": "اعرف أكثر"
     },
@@ -70,6 +70,14 @@
     "activeProviders": "مزودون نشطون",
     "aiRecommended": "موصى به بالذكاء الاصطناعي",
     "assignProvider": "إسناد مزود",
+    "newAnnouncement": "إعلان جديد",
+    "confirmAssign": "تأكيد الإسناد",
+    "escrowStatus": "ضمان",
+    "scoreCategory": "تخصص",
+    "scoreLocation": "موقع",
+    "scoreRating": "تقييم",
+    "scoreCost": "تكلفة",
+    "selectPrompt": "اختر طلباً من القائمة لعرض التوصيات",
     "kanban": {
       "submitted": "مُقدَّم",
       "assigned": "مُسنَد",
@@ -81,38 +89,158 @@
     "home": "الرئيسية",
     "newRequest": "طلب جديد",
     "myRequests": "طلباتي",
+    "activeRequests": "نشطة",
+    "completedRequests": "مكتملة",
     "payments": "المدفوعات",
     "notifications": "الإشعارات",
     "requestStatus": "حالة الطلب",
     "submitRequest": "إرسال الطلب",
+    "greeting": "مرحباً، {{name}}",
+    "requestTitle": "عنوان المشكلة",
+    "priority": "مستوى الأولوية",
+    "unit": "الوحدة",
+    "details": "التفاصيل",
+    "chooseCategory": "اختر نوع المشكلة",
+    "requestSent": "تم إرسال طلبك!",
+    "requestSentSub": "سيتم مراجعة طلبك وإسناده قريباً",
+    "activeCount": "لديك {{count}} طلب نشط",
+    "noActiveRequests": "لا توجد طلبات نشطة",
+    "unread": "{{count}} غير مقروءة",
+    "markAllRead": "تحديد الكل كمقروء",
+    "titlePlaceholder": "مثال: تسرب مياه في الحمام",
+    "descPlaceholder": "صف المشكلة بالتفصيل...",
+    "payment": {
+      "success": "تمت الدفعة بنجاح",
+      "failed": "فشلت عملية الدفع",
+      "verifyFailed": "تعذّر التحقق من الدفعة",
+      "startFailed": "تعذّر بدء عملية الدفع",
+      "maintenanceFee": "دفعة صيانة",
+      "fee": "دفعة"
+    },
     "categories": {
       "plumbing": "سباكة",
       "electrical": "كهرباء",
       "hvac": "تكييف",
       "painting": "دهان",
       "cleaning": "تنظيف",
+      "carpentry": "نجارة",
+      "general": "عام",
       "other": "أخرى"
     }
   },
   "provider": {
-    "jobQueue": "قائمة الأعمال",
-    "activeJob": "العمل الحالي",
-    "earnings": "الأرباح",
-    "profile": "الملف الشخصي",
-    "acceptJob": "قبول",
-    "declineJob": "رفض",
-    "updateStatus": "تحديث الحالة",
-    "submitCompletion": "تأكيد الإتمام"
+    "title": "بوابة مزود الخدمة",
+    "nav": {
+      "jobs": "الوظائف",
+      "active": "النشط",
+      "earnings": "الأرباح",
+      "profile": "الملف الشخصي"
+    },
+    "jobs": {
+      "title": "قائمة الوظائف",
+      "count": "معلق",
+      "empty": "لا توجد وظائف جديدة",
+      "start": "ابدأ الوظيفة"
+    },
+    "active": {
+      "title": "الوظيفة النشطة",
+      "empty": "لا توجد وظائف جارية",
+      "addNote": "إضافة ملاحظة",
+      "markComplete": "تحديد كمكتمل",
+      "notePlaceholder": "تحديث التقدم…",
+      "completePlaceholder": "ملاحظات الإتمام (اختياري)…",
+      "complete": "إتمام الوظيفة",
+      "send": "إرسال"
+    },
+    "earnings": {
+      "title": "الأرباح",
+      "totalSar": "إجمالي الأرباح (ر.س)",
+      "pendingSar": "معلق (ر.س)",
+      "history": "الوظائف المكتملة",
+      "empty": "لا توجد وظائف مكتملة بعد"
+    },
+    "profile": {
+      "title": "ملفي الشخصي",
+      "reviews": "تقييم",
+      "verified": "مزود خدمة موثق",
+      "specialties": "التخصصات"
+    }
   },
   "owner": {
-    "overview": "نظرة عامة",
-    "properties": "العقارات",
-    "financials": "المالية",
-    "maintenance": "الصيانة",
-    "reports": "التقارير",
-    "occupancyRate": "نسبة الإشغال",
-    "netYield": "صافي العائد",
-    "totalUnits": "إجمالي الوحدات"
+    "title": "بوابة المالك",
+    "nav": {
+      "overview": "نظرة عامة",
+      "properties": "العقارات",
+      "financials": "الماليات",
+      "history": "السجل",
+      "reports": "التقارير"
+    },
+    "overview": {
+      "title": "نظرة عامة",
+      "properties": "العقارات",
+      "openRequests": "الطلبات المفتوحة",
+      "myProperties": "عقاراتي",
+      "units": "وحدة",
+      "open": "مفتوح",
+      "empty": "لا توجد عقارات"
+    },
+    "detail": {
+      "totalUnits": "إجمالي الوحدات",
+      "occupied": "مشغولة",
+      "open": "مشاكل مفتوحة",
+      "units": "الوحدات",
+      "unit": "وحدة",
+      "floor": "الطابق",
+      "vacant": "شاغرة",
+      "openRequests": "الصيانة المفتوحة"
+    },
+    "financials": {
+      "title": "الماليات",
+      "totalRevenue": "إجمالي المستلم",
+      "pending": "معلق",
+      "monthly": "الإيرادات الشهرية (ر.س)",
+      "history": "سجل المدفوعات",
+      "empty": "لا يوجد سجل مدفوعات",
+      "payment": "دفعة"
+    },
+    "history": {
+      "title": "سجل الصيانة",
+      "totalRequests": "إجمالي الطلبات",
+      "completed": "مكتملة",
+      "totalCost": "إجمالي التكلفة",
+      "allProperties": "جميع العقارات",
+      "allStatuses": "جميع الحالات"
+    },
+    "reports": {
+      "title": "التقارير",
+      "export": "تصدير PDF",
+      "totalRevenue": "إجمالي الإيرادات",
+      "totalCost": "إجمالي التكاليف",
+      "netYield": "صافي العائد",
+      "completed": "وظائف مكتملة",
+      "properties": "العقارات",
+      "requestsByMonth": "الطلبات الشهرية",
+      "requests": "طلب"
+    }
+  },
+  "priority": {
+    "low": "منخفض",
+    "medium": "متوسط",
+    "high": "عالٍ",
+    "urgent": "طارئ"
+  },
+  "paymentStatus": {
+    "pending": "معلق",
+    "processing": "قيد المعالجة",
+    "completed": "مكتمل",
+    "failed": "فاشل",
+    "refunded": "مُستردّ"
+  },
+  "errors": {
+    "unexpected": "حدث خطأ غير متوقع",
+    "backHome": "العودة للرئيسية",
+    "retry": "إعادة المحاولة",
+    "notFound": "الصفحة غير موجودة"
   },
   "common": {
     "loading": "جاري التحميل...",
@@ -128,7 +256,10 @@
     "search": "بحث",
     "filter": "تصفية",
     "sar": "ر.س",
+    "reviews": "تقييم",
+    "description": "الوصف",
     "noData": "لا توجد بيانات",
+    "viewAll": "عرض الكل",
     "status": {
       "submitted": "مُقدَّم",
       "assigned": "مُسنَد",

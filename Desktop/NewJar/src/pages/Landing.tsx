@@ -272,8 +272,8 @@ export default function Landing() {
   const [navScrolled, setNavScrolled] = useState(false);
   const { containerRef, progress, parallax } = useStickyScroll();
 
-  // Heading is always visible; fades out only after user scrolls past 45%
-  const textFade   = Math.max(0, 1 - spring(norm(progress, 0.45, 0.9)));
+  // Heading fades out after user scrolls past 60% of the sticky section
+  const textFade   = Math.max(0, 1 - spring(norm(progress, 0.60, 0.95)));
   // Dashboard starts at 25% visible on load, fully reveals by 55% scroll
   const dashReveal = Math.max(0.25, spring(norm(progress, 0.0, 0.55)));
 
@@ -365,35 +365,30 @@ export default function Landing() {
         )}
       </nav>
 
-      {/* Sticky Hero (300vh) */}
-      <section id="home" ref={containerRef} style={{ height: "300vh", background: BG_DARK }}>
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
+      {/* Sticky Hero (200vh) */}
+      <section id="home" ref={containerRef} style={{ height: "200vh", background: BG_DARK }}>
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-start pt-28">
           <AntiGravityCanvas parallaxOffset={parallax} />
 
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 px-6 max-w-5xl mx-auto w-full">
+          <div className="relative z-10 flex flex-col items-center gap-8 px-6 max-w-4xl mx-auto w-full">
             {/* Hero text */}
             <div
-              className="flex-1 text-center md:text-start"
+              className="w-full text-center"
               style={{ opacity: textFade, transform: `translateY(${(1 - textFade) * 24}px)` }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-6 text-xs"
-                style={{ background: "rgba(188,125,55,0.1)", border: "1px solid rgba(188,125,55,0.25)", color: BRONZE }}>
-                ✦ {t("auth.roles.union_admin")} · {t("auth.roles.tenant")} · {t("auth.roles.contractor")} · {t("auth.roles.owner")}
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ color: TEXT_LIGHT }}>
-                {t("landing.hero.title")}{" "}
+              <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-4">
                 <span style={{
                   background: `linear-gradient(135deg, ${BRONZE}, ${SAND})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent"
                 }}>
-                  {t("landing.hero.titleAccent")}
+                  JAR
                 </span>
               </h1>
-              <p className="text-base md:text-lg max-w-md mb-8" style={{ color: MUTED_DARK }}>
+              <p className="text-base md:text-lg max-w-2xl mx-auto mb-8" style={{ color: MUTED_DARK }}>
                 {t("landing.hero.subtitle")}
               </p>
-              <div className="flex gap-3 justify-center md:justify-start flex-wrap">
+              <div className="flex gap-3 justify-center flex-wrap">
                 <button
                   onClick={() => setModal("register")}
                   className="px-6 py-3 rounded-2xl font-semibold text-sm transition-opacity hover:opacity-90"
@@ -410,7 +405,7 @@ export default function Landing() {
             </div>
 
             {/* MockDashboard */}
-            <div className="flex-1 flex justify-center" style={{ opacity: dashReveal }}>
+            <div className="w-full flex justify-center" style={{ opacity: dashReveal }}>
               <MockDashboard reveal={dashReveal} />
             </div>
           </div>
@@ -471,9 +466,17 @@ export default function Landing() {
           <div className="flex items-center gap-2">
             <img src="/jar-logo.svg" alt="جار" className="h-7 w-auto" />
           </div>
-          <p className="text-xs" style={{ color: MUTED_LIGHT }}>
-            © {new Date().getFullYear()} {t("landing.footer.platform")} — {t("landing.footer.rights")}
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 text-xs" style={{ color: MUTED_LIGHT }}>
+            <a
+              href="mailto:info@jarrsaudi.com"
+              className="transition-colors hover:opacity-80"
+              style={{ color: BRONZE }}
+            >
+              info@jarrsaudi.com
+            </a>
+            <span className="hidden md:inline" style={{ color: SAND }}>·</span>
+            <p>© {new Date().getFullYear()} {t("landing.footer.platform")} — {t("landing.footer.rights")}</p>
+          </div>
         </div>
       </footer>
     </>
