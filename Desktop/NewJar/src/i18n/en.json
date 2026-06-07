@@ -52,7 +52,8 @@
       "email": "Email",
       "message": "Message",
       "send": "Send",
-      "sending": "Sending..."
+      "sending": "Sending...",
+      "sent": "Message sent!"
     },
     "footer": {
       "rights": "All rights reserved",

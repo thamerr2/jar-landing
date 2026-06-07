@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Hammer, Wallet, TrendingUp, Menu, X, Send } from "lucide-react";
+import { Zap, Wallet, MapPin, BarChart3, Menu, X, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,10 +27,10 @@ function spring(t: number) {
   return 1 - Math.pow(1 - t2, 4) * (1 + 1.4 * t2);
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({ label, error, labelColor = MUTED_DARK, children }: { label: string; error?: string; labelColor?: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-xs font-medium mb-1" style={{ color: MUTED_DARK }}>{label}</label>
+      <label className="block text-xs font-medium mb-1" style={{ color: labelColor }}>{label}</label>
       {children}
       {error && <p className="text-xs mt-1" style={{ color: "#f87171" }}>{error}</p>}
     </div>
@@ -39,6 +39,7 @@ function Field({ label, error, children }: { label: string; error?: string; chil
 
 const inputCls = "w-full rounded-xl px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary";
 const inputStyle = { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(188,125,55,0.2)", color: TEXT_LIGHT };
+const inputStyleLight = { background: "#fff", border: "1px solid rgba(188,125,55,0.35)", color: TEXT_DARK };
 
 function ModalShell({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
   useEffect(() => {
@@ -231,19 +232,19 @@ function ContactSection() {
           {sent ? (
             <div className="text-center py-8">
               <div className="text-4xl mb-3">✓</div>
-              <p className="font-semibold" style={{ color: BRONZE }}>تم الإرسال!</p>
+              <p className="font-semibold" style={{ color: BRONZE }}>{t("landing.contact.sent")}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <Field label={t("landing.contact.name")}>
-                <input {...register("name")} type="text" className={inputCls} style={inputStyle} />
+              <Field label={t("landing.contact.name")} labelColor={MUTED_LIGHT}>
+                <input {...register("name")} type="text" className={inputCls} style={inputStyleLight} />
               </Field>
-              <Field label={t("landing.contact.email")}>
-                <input {...register("email")} type="email" className={inputCls} style={inputStyle} />
+              <Field label={t("landing.contact.email")} labelColor={MUTED_LIGHT}>
+                <input {...register("email")} type="email" className={inputCls} style={inputStyleLight} />
               </Field>
-              <Field label={t("landing.contact.message")}>
+              <Field label={t("landing.contact.message")} labelColor={MUTED_LIGHT}>
                 <textarea {...register("message")} rows={4}
-                  className={cn(inputCls, "resize-none")} style={inputStyle} />
+                  className={cn(inputCls, "resize-none")} style={inputStyleLight} />
               </Field>
               <button
                 type="submit"
@@ -263,7 +264,7 @@ function ContactSection() {
 }
 
 const FEATURE_KEYS = ["ai", "payments", "tracking", "reports"] as const;
-const FEATURE_ICONS = [TrendingUp, Hammer, Wallet, TrendingUp];
+const FEATURE_ICONS = [Zap, Wallet, MapPin, BarChart3];
 
 export default function Landing() {
   const { t, i18n } = useTranslation();
