@@ -1,0 +1,64 @@
+import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Problem from '@/components/Problem';
+import Solutions from '@/components/Solutions';
+import Demo from '@/components/Demo';
+import Marketing from '@/components/Marketing';
+import Footer from '@/components/Footer';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isAr = locale === 'ar';
+
+  return {
+    title: isAr
+      ? 'JAR — نظام التشغيل الذكي للمجتمعات السكنية'
+      : 'JAR — Intelligent OS for Residential Communities',
+    description: isAr
+      ? 'إدارة. خدمة. ذكاء. كل شيء في منصة واحدة. أول منصة سعودية تجمع المطور والسكان ومزود الخدمة.'
+      : 'Manage. Serve. Predict. Everything in one platform. Saudi-first. Resident-centric. AI-powered.',
+    openGraph: {
+      title: isAr ? 'JAR — نظام التشغيل الذكي' : 'JAR — Intelligent OS',
+      description: isAr
+        ? 'منصة إدارة المجتمعات السكنية الذكية'
+        : 'Smart Residential Community Management',
+      url: 'https://jarsaudi.com',
+      siteName: 'JAR',
+      locale: locale === 'ar' ? 'ar_SA' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'JAR',
+      description: isAr
+        ? 'نظام التشغيل الذكي للمجتمعات السكنية'
+        : 'Intelligent OS for Residential Communities',
+    },
+    alternates: {
+      canonical: `https://jarsaudi.com/${locale}`,
+      languages: {
+        ar: 'https://jarsaudi.com/ar',
+        en: 'https://jarsaudi.com/en',
+      },
+    },
+  };
+}
+
+export default function Home() {
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Problem />
+      <Solutions />
+      <Demo />
+      <Marketing />
+      <Footer />
+    </main>
+  );
+}
