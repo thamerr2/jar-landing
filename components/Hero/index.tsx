@@ -30,49 +30,49 @@ function AnimatedHeadline({ text }: { text: string }) {
   );
 }
 
-function FloatingDashboard() {
+const feedEvents = [
+  { time: '08:32', role: 'الساكن',      event: 'طلب صيانة — تكييف لا يبرد',              isJar: false },
+  { time: '08:33', role: 'JAR',         event: 'تم تعيين المزود الأقرب تلقائياً ✓',       isJar: true  },
+  { time: '08:51', role: 'المزود',      event: 'في الطريق — ETA 12 دقيقة',               isJar: false },
+  { time: '09:04', role: 'JAR',         event: 'تم الإغلاق · رضا السكان ★★★★★',          isJar: true  },
+];
+
+function LiveFeed() {
   return (
     <motion.div
-      animate={{ y: [0, -12, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: [0.4, 0, 0.6, 1] as const }}
-      className="relative w-full max-w-md mx-auto"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.4, ease: [0.2, 0, 0, 1] as const }}
+      className="w-full max-w-md mx-auto"
     >
-      <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden shadow-2xl">
-        {/* Chrome bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
-          <div className="w-3 h-3 rounded-full bg-red-400/60" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-          <div className="w-3 h-3 rounded-full bg-green-400/60" />
-          <div className="flex-1 mx-3 h-5 bg-white/10 rounded-full" />
+      <div className="rounded-2xl border border-white/15 overflow-hidden shadow-2xl" style={{ background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)' }}>
+        {/* Status bar */}
+        <div className="flex items-center gap-2.5 px-5 py-3 border-b border-white/10">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
+          </span>
+          <span className="text-white/50 text-xs tracking-wide">JAR — نشاط المنظومة</span>
         </div>
-        {/* Content */}
+        {/* Events */}
         <div className="p-5 space-y-4">
-          <div className="grid grid-cols-2 gap-3">
-            {[['1,240', 'وحدة'], ['91%', 'إشغال'], ['2.1M', 'SAR'], ['4.7★', 'رضا']].map(([val, lbl], i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-3 text-center">
-                <div className="text-accent font-bold text-lg">{val}</div>
-                <div className="text-white/60 text-xs mt-0.5">{lbl}</div>
+          {feedEvents.map((e, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.75 + i * 0.28, ease: [0.2, 0, 0, 1] as const }}
+              className="flex items-start gap-4"
+            >
+              <span className="text-white/30 text-xs tabular-nums shrink-0 mt-0.5 w-10">{e.time}</span>
+              <div className="flex-1 min-w-0">
+                <span className={`text-xs font-semibold ${e.isJar ? 'text-accent' : 'text-white/60'}`}>
+                  {e.role}
+                </span>
+                <p className="text-white/80 text-sm leading-snug mt-0.5">{e.event}</p>
               </div>
-            ))}
-          </div>
-          <div className="space-y-2">
-            {[80, 55, 90].map((pct, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-20 text-xs text-white/60 truncate">
-                  {['النخيل', 'واحة', 'برج'][i]}
-                </div>
-                <div className="flex-1 bg-white/10 rounded-full h-2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${pct}%` }}
-                    transition={{ duration: 1, delay: 0.5 + i * 0.2 }}
-                    className="h-2 rounded-full bg-accent"
-                  />
-                </div>
-                <div className="text-xs text-white/60 w-8">{pct}%</div>
-              </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </motion.div>
@@ -94,7 +94,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-white/70 text-lg leading-relaxed"
+              className="text-white/70 text-lg leading-relaxed max-w-lg"
             >
               {t('subheadline')}
             </motion.p>
@@ -120,14 +120,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Floating dashboard */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <FloatingDashboard />
-          </motion.div>
+          {/* Live feed */}
+          <LiveFeed />
         </div>
       </div>
     </section>

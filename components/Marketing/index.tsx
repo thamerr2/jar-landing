@@ -2,8 +2,6 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
-const quoteKeys = ['quote1', 'quote2', 'quote3', 'quote4', 'quote5'] as const;
-
 export default function Marketing() {
   const t = useTranslations('marketing');
 
@@ -11,30 +9,69 @@ export default function Marketing() {
     <section className="py-24 bg-primary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-white text-center mb-16"
+          className="text-3xl md:text-4xl font-bold text-white text-center mb-20"
         >
           {t('title')}
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {quoteKeys.map((key, i) => (
-            <motion.div
-              key={key}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-7 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-accent/40 transition-all"
-            >
-              <div className="w-8 h-1 bg-accent rounded mb-4" />
-              <p className="text-white font-semibold text-lg leading-relaxed">
-                {t(key)}
-              </p>
-            </motion.div>
-          ))}
+        {/* Hero quote — full width, largest */}
+        <motion.div
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="border-t border-white/15 pt-10 pb-12"
+        >
+          <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed max-w-4xl">
+            {t('quote1')}
+          </p>
+        </motion.div>
+
+        {/* Mid-tier quotes — 2 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 border-t border-white/10 pt-10 pb-12">
+          <motion.p
+            initial={{ y: 16 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-lg md:text-xl text-white/85 font-medium leading-relaxed"
+          >
+            {t('quote2')}
+          </motion.p>
+          <motion.p
+            initial={{ y: 16 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-lg md:text-xl text-white/85 font-medium leading-relaxed mt-8 md:mt-0"
+          >
+            {t('quote3')}
+          </motion.p>
+        </div>
+
+        {/* Supporting quotes — 2 columns, quieter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 border-t border-white/10 pt-10">
+          <motion.p
+            initial={{ y: 12 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-base text-white/55 leading-relaxed"
+          >
+            {t('quote4')}
+          </motion.p>
+          <motion.p
+            initial={{ y: 12 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-base text-white/55 leading-relaxed mt-6 md:mt-0"
+          >
+            {t('quote5')}
+          </motion.p>
         </div>
       </div>
     </section>

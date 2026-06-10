@@ -21,8 +21,8 @@
   --color-accent:        #B8924A;
   --color-accent-light:  #D4AF6E;
   --color-bg:            #FFFFFF;
-  --color-bg-secondary:  #F5F0E8;
-  --color-text-muted:    #6B7280;
+  --color-bg-secondary:  #ECEEF3;
+  --color-text-muted:    #4B5563;
 
   --font-sans: 'SaudiFont', system-ui, sans-serif;
 }
@@ -35,6 +35,21 @@ body {
   background-color: #FFFFFF;
   color: #1B2A4A;
   font-family: 'SaudiFont', system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @keyframes gradient-shift {

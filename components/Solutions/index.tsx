@@ -20,8 +20,8 @@ export default function Solutions() {
     <section id="solutions" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
@@ -30,24 +30,50 @@ export default function Solutions() {
           <p className="text-text-muted max-w-2xl mx-auto">{t('subtitle')}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cardKeys.map((key, i) => (
-            <motion.div
-              key={key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="group p-7 rounded-2xl border border-primary/8 hover:border-accent/30 hover:shadow-lg transition-all cursor-default"
-            >
-              <div className="w-12 h-12 rounded-xl bg-bg-secondary flex items-center justify-center text-accent mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-                {solutionIcons[i]}
-              </div>
-              <h3 className="font-bold text-primary mb-2">{t(`${key}_title`)}</h3>
-              <p className="text-sm text-text-muted leading-relaxed">{t(`${key}_desc`)}</p>
-            </motion.div>
-          ))}
+        {/*
+          Bento grid — 4 cols on desktop:
+          Row 1: card1 (col-span-2, large) | card2 (col-span-1) | card3 (col-span-1)
+          Row 2: card4 (col-span-1)        | card5 (col-span-2, large AI) | card6 (col-span-1)
+        */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {cardKeys.map((key, i) => {
+            const isLarge = i === 0 || i === 4;
+
+            return (
+              <motion.div
+                key={key}
+                initial={{ y: 24 }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={
+                  isLarge
+                    ? 'lg:col-span-2 p-8 rounded-2xl bg-primary flex flex-col justify-between min-h-52'
+                    : 'group p-6 rounded-2xl border border-primary/8 hover:border-accent/30 hover:shadow-md transition-all'
+                }
+              >
+                {isLarge ? (
+                  <>
+                    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center text-white mb-6">
+                      {solutionIcons[i]}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl text-white mb-2">{t(`${key}_title`)}</h3>
+                      <p className="text-white/65 leading-relaxed text-sm">{t(`${key}_desc`)}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="w-10 h-10 rounded-lg bg-bg-secondary flex items-center justify-center text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                      {solutionIcons[i]}
+                    </div>
+                    <h3 className="font-bold text-primary mb-1.5 text-sm">{t(`${key}_title`)}</h3>
+                    <p className="text-sm text-text-muted leading-relaxed">{t(`${key}_desc`)}</p>
+                  </>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
