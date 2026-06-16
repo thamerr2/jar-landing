@@ -1,16 +1,25 @@
 {
   "nav": {
-    "platform": "Platform",
-    "solutions": "Solutions",
-    "about": "About JAR",
-    "contact": "Contact",
+    "home": "Home",
+    "about_label": "About JAR",
+    "services": "Services",
+    "login": "Sign In",
+    "register": "Get Started",
     "cta": "Contact Us"
   },
   "hero": {
-    "headline": "Manage Your Residential Community Smarter",
-    "subheadline": "JAR connects developers, residents, and service providers in one unified system — everything in one place.",
-    "cta_primary": "Contact Us",
-    "cta_secondary": "Learn More"
+    "headline": "Smarter community management. Better resident experience.",
+    "subheadline": "JAR connects developers, residents, and service providers in one unified platform.",
+    "cta_primary": "Get Started",
+    "cta_secondary": "Book a Demo"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "A Saudi platform connecting every stakeholder in residential communities",
+    "body": "JAR brings developers, residents, and service providers together in one digital system — for smarter management and a better experience for everyone.",
+    "point1": "Full unit and resident management",
+    "point2": "Real-time maintenance and service tracking",
+    "point3": "Live reports and data at your fingertips"
   },
   "solutions": {
     "title": "What Does JAR Offer?",
@@ -105,12 +114,7 @@
     "svc_confirm": "Confirm Request"
   },
   "marketing": {
-    "title": "Why JAR?",
-    "quote1": "We believe every resident deserves a professionally managed community — and every manager deserves tools that make their work easier",
-    "quote2": "JAR is built on a real understanding of the Saudi market — from HOA requirements to the expectations of the modern resident",
-    "quote3": "Transparency and speed aren't luxuries — they're the minimum every stakeholder in the ecosystem deserves",
-    "quote4": "Every riyal collected, every request processed, every notification sent — all happen inside one integrated system",
-    "quote5": "Because we believe good technology goes unnoticed — it works in the background and makes everyone's life better"
+    "quote1": "We believe every resident deserves a professionally managed community, and every manager deserves tools that make their work easier."
   },
   "footer": {
     "tagline": "Residential Community Management Platform",
