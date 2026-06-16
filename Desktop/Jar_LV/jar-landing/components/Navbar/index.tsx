@@ -22,16 +22,15 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { key: 'platform' as const, href: '#solutions' },
-    { key: 'solutions' as const, href: '#solutions' },
-    { key: 'about' as const, href: '#about' },
-    { key: 'contact' as const, href: '#contact' },
+    { key: 'home' as const, href: '#' },
+    { key: 'about_label' as const, href: '#about' },
+    { key: 'services' as const, href: '#solutions' },
   ];
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -77,9 +76,20 @@ export default function Navbar() {
 
           <a
             href="#contact"
+            className={`hidden md:inline-flex items-center px-5 py-2 rounded-full border text-sm font-semibold transition-colors ${
+              scrolled
+                ? 'border-primary/20 text-primary hover:border-accent hover:text-accent'
+                : 'border-white/40 text-white hover:bg-white/10'
+            }`}
+          >
+            {t('login')}
+          </a>
+
+          <a
+            href="#contact"
             className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-light transition-colors"
           >
-            {t('cta')}
+            {t('register')}
           </a>
         </div>
       </div>
