@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Problem from '@/components/Problem';
+import About from '@/components/About';
 import Solutions from '@/components/Solutions';
-import Demo from '@/components/Demo';
-import Marketing from '@/components/Marketing';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export async function generateMetadata({
@@ -54,10 +53,9 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Problem />
+      <About />
       <Solutions />
-      <Demo />
-      <Marketing />
+      <Contact />
       <Footer />
     </main>
   );
