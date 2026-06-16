@@ -17,10 +17,10 @@ export default function Hero() {
         }}
       />
 
-      {/* Layered overlays for depth */}
-      <div className="absolute inset-0 bg-primary/65" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-transparent to-transparent" />
+      {/* Layered overlays — lighter so building shows through */}
+      <div className="absolute inset-0 bg-primary/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-transparent to-transparent" />
 
       {/* Animated accent glow — bottom right */}
       <motion.div
