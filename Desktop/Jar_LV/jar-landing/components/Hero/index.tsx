@@ -27,9 +27,9 @@ export default function Hero() {
       {/* RTL gradient: darker on the right where text sits */}
       <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/30 to-transparent" />
 
-      {/* Content — pinned to the right */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-32">
-        <div className="max-w-lg ms-auto">
+      {/* Content — physically anchored to the right */}
+      <div className="absolute inset-y-0 right-0 w-1/2 z-10 flex items-center">
+        <div className="w-full px-12 py-32" style={{ direction: 'rtl' }}>
 
           {/* Headline */}
           <motion.h1
@@ -51,22 +51,16 @@ export default function Hero() {
             {t('subheadline')}
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.28 }}
-            className="flex flex-wrap gap-3 mb-8"
+            className="mb-8"
           >
             <a
               href="#contact"
-              className="px-7 py-3 rounded-full bg-accent text-white font-semibold hover:bg-accent-light transition-colors shadow-lg shadow-accent/30 text-sm"
-            >
-              {t('cta_primary')}
-            </a>
-            <a
-              href="#contact"
-              className="px-7 py-3 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 transition-colors backdrop-blur-sm text-sm"
+              className="inline-block px-7 py-3 rounded-full bg-accent text-white font-semibold hover:bg-accent-light transition-colors shadow-lg shadow-accent/30 text-sm"
             >
               {t('cta_secondary')}
             </a>
@@ -97,6 +91,9 @@ export default function Hero() {
 
       {/* Bottom fade to white */}
       <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+      {/* Spacer so section has correct height */}
+      <div className="min-h-screen" />
 
     </section>
   );

@@ -24,7 +24,32 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t('title')}</h2>
-          <p className="text-text-muted">{t('subtitle')}</p>
+          <p className="text-text-muted mb-6">{t('subtitle')}</p>
+
+          {/* Contact links */}
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            <a
+              href="mailto:info@jarsaudi.com"
+              className="flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4 shrink-0">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2 7l10 7 10-7" />
+              </svg>
+              info@jarsaudi.com
+            </a>
+            <a
+              href="https://www.linkedin.com/company/jarsaudi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM6.9 20.45H3.78V9H6.9v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
         </motion.div>
 
         {sent ? (
