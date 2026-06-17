@@ -1,30 +1,14 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'SaudiFont';
-  src: url('/fonts/SaudiFont-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SaudiFont';
-  src: url('/fonts/SaudiFont-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme inline {
-  --color-primary:       #1B2A4A;
-  --color-accent:        #B8924A;
-  --color-accent-light:  #D4AF6E;
+  --color-primary:       #1B7A4E;
+  --color-accent:        #2D9E6B;
+  --color-accent-light:  #48BB8A;
   --color-bg:            #FFFFFF;
-  --color-bg-secondary:  #ECEEF3;
+  --color-bg-secondary:  #F2F9F5;
   --color-text-muted:    #4B5563;
 
-  --font-sans: 'SaudiFont', system-ui, sans-serif;
+  --font-sans: var(--font-ibm-arabic), system-ui, sans-serif;
 }
 
 html {
@@ -34,7 +18,7 @@ html {
 body {
   background-color: #FFFFFF;
   color: #1B2A4A;
-  font-family: 'SaudiFont', system-ui, sans-serif;
+  font-family: var(--font-ibm-arabic), system-ui, sans-serif;
 }
 
 h1, h2, h3 {
@@ -52,6 +36,17 @@ h1, h2, h3 {
   }
 }
 
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translateX(0%)  translateY(0%); }
+  100% { transform: scale(1.08) translateX(-2%) translateY(-1%); }
+}
+
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.08) translateX(2%)  translateY(1%); }
+  100% { transform: scale(1)    translateX(0%)  translateY(0%); }
+}
+
+
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50%       { background-position: 100% 50%; }
@@ -60,11 +55,11 @@ h1, h2, h3 {
 .hero-gradient {
   background: linear-gradient(
     135deg,
-    #1B2A4A 0%,
-    #243560 30%,
-    #1B2A4A 55%,
-    #3D2E12 80%,
-    #B8924A 100%
+    #1B7A4E 0%,
+    #155E3A 30%,
+    #1B7A4E 55%,
+    #0F4A2E 80%,
+    #2D9E6B 100%
   );
   background-size: 300% 300%;
   animation: gradient-shift 12s ease infinite;

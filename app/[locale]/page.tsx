@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Problem from '@/components/Problem';
+import WhoFor from '@/components/WhoFor';
 import Solutions from '@/components/Solutions';
-import Demo from '@/components/Demo';
-import Marketing from '@/components/Marketing';
+import Problem from '@/components/Problem';
+import HowItWorks from '@/components/HowItWorks';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export async function generateMetadata({
@@ -20,8 +22,8 @@ export async function generateMetadata({
       ? 'JAR — نظام التشغيل الذكي للمجتمعات السكنية'
       : 'JAR — Intelligent OS for Residential Communities',
     description: isAr
-      ? 'إدارة. خدمة. ذكاء. كل شيء في منصة واحدة. أول منصة سعودية تجمع المطور والسكان ومزود الخدمة.'
-      : 'Manage. Serve. Predict. Everything in one platform. Saudi-first. Resident-centric. AI-powered.',
+      ? 'منصة واحدة. أربعة أطراف. نظام بيئي متكامل. أول منصة سعودية تجمع المطور والسكان ومزود الخدمة.'
+      : 'One Platform. Four Stakeholders. One Ecosystem. Saudi-first. Resident-centric. AI-powered.',
     openGraph: {
       title: isAr ? 'JAR — نظام التشغيل الذكي' : 'JAR — Intelligent OS',
       description: isAr
@@ -54,10 +56,12 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Problem />
+      <WhoFor />
       <Solutions />
-      <Demo />
-      <Marketing />
+      <Problem />
+      <HowItWorks />
+      <FAQ />
+      <Contact />
       <Footer />
     </main>
   );
