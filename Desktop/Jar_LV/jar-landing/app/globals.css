@@ -41,6 +41,12 @@ h1, h2, h3 {
   100% { transform: scale(1.08) translateX(-2%) translateY(-1%); }
 }
 
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.08) translateX(2%)  translateY(1%); }
+  100% { transform: scale(1)    translateX(0%)  translateY(0%); }
+}
+
+
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50%       { background-position: 100% 50%; }
