@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const navLinks = [
     { key: 'home' as const, href: '#' },
-    { key: 'about_label' as const, href: '#about' },
+    { key: 'about_label' as const, href: '#whofor' },
     { key: 'services' as const, href: '#solutions' },
   ];
 
@@ -41,7 +41,11 @@ export default function Navbar() {
             alt="JAR"
             width={72}
             height={36}
-            className="brightness-0 invert"
+            className={`transition-all duration-300 ${
+              scrolled
+                ? '[filter:brightness(0)_saturate(100%)_invert(30%)_sepia(82%)_saturate(607%)_hue-rotate(120deg)_brightness(84%)_contrast(102%)]'
+                : 'brightness-0 invert'
+            }`}
           />
         </a>
 

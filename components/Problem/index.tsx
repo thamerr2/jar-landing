@@ -25,9 +25,6 @@ export default function Problem() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-medium mb-4 border border-red-100">
-            {t('badge')}
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t('title')}</h2>
           <p className="text-text-muted max-w-xl mx-auto">{t('subtitle')}</p>
         </motion.div>

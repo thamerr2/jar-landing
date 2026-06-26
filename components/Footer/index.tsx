@@ -23,8 +23,6 @@ export default function Footer() {
               [
                 { key: 'nav_solutions', href: '#solutions' },
                 { key: 'nav_about', href: '#about' },
-                { key: 'nav_privacy', href: '#' },
-                { key: 'nav_terms', href: '#' },
                 { key: 'contact_label', href: '#contact' },
               ] as const
             ).map(({ key, href }) => (

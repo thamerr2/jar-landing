@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import WhoFor from '@/components/WhoFor';
-import Solutions from '@/components/Solutions';
 import Problem from '@/components/Problem';
+import Solutions from '@/components/Solutions';
 import HowItWorks from '@/components/HowItWorks';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -57,8 +57,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhoFor />
-      <Solutions />
       <Problem />
+      <Solutions />
       <HowItWorks />
       <FAQ />
       <Contact />
