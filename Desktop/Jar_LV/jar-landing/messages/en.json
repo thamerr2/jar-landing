@@ -8,14 +8,16 @@
     "cta": "Contact Us"
   },
   "hero": {
-    "headline": "One Platform. Four Stakeholders. One Ecosystem.",
-    "subheadline": "JAR transforms residential community management from scattered chaos to one intelligent, connected system — from handover day to maximum resident satisfaction.",
+    "headline": "JAR — One Integrated Ecosystem",
+    "subheadline": "The intelligent operating system for Saudi residential communities",
     "cta_primary": "Start Free Trial",
     "cta_secondary": "Book a Demo"
   },
   "problem": {
+    "badge": "The Problem",
+    "solution": "JAR solves all of this in one platform",
     "title": "Your Smart Community Managed the Old Way?",
-    "subtitle": "New building, elegant lobby, premium finishes — but behind the scenes:",
+    "subtitle": "New building, elegant lobby, premium finishes, but behind the scenes:",
     "p1_title": "WhatsApp Instead of a System",
     "p1_desc": "No documentation, no tracking, no real accountability.",
     "p2_title": "Reactive Maintenance",
@@ -26,14 +28,31 @@
     "p4_desc": "Random complaints with no way to track or close them."
   },
   "whofor": {
-    "title": "Who Is JAR For?",
-    "subtitle": "One system that serves every stakeholder exactly what they need",
-    "dev_title": "For Developers",
-    "dev_desc": "From the moment you hand over your project, control its reputation and performance. Unified dashboard across all your projects, full visibility on resident satisfaction, and real-time operational reports.",
-    "dev_cta": "Learn about JAR for Developers",
-    "hoa_title": "For Homeowners Associations",
-    "hoa_desc": "Manage maintenance requests, payments, service providers, and resident communication — everything in one organized, easy system without juggling multiple tools.",
-    "hoa_cta": "Learn about JAR for HOAs"
+    "badge": "Who We Serve",
+    "title": "A Platform for Every Stakeholder",
+    "subtitle": "One system that serves every party exactly what they need",
+    "dev_title": "Property Developer",
+    "dev_desc": "Full control over your project's reputation and performance from handover day. Unified dashboard for all your projects.",
+    "dev_cta": "Learn more",
+    "hoa_title": "HOA",
+    "hoa_desc": "Manage maintenance, payments, and residents in one easy system, no more juggling multiple tools.",
+    "hoa_cta": "Learn more",
+    "resident_title": "Resident",
+    "resident_desc": "Request services, pay fees, and follow your community — all from one app on your phone.",
+    "resident_cta": "Learn more",
+    "provider_title": "Service Provider",
+    "provider_desc": "Receive requests, organize your schedule, and get paid professionally and quickly.",
+    "provider_cta": "Learn more"
+  },
+  "stats": {
+    "s1_value": "500+",
+    "s1_label": "Managed Communities",
+    "s2_value": "17K+",
+    "s2_label": "Residential Units",
+    "s3_value": "2K+",
+    "s3_label": "Monthly Requests",
+    "s4_value": "98%",
+    "s4_label": "Resident Satisfaction"
   },
   "about": {
     "badge": "About Us",
@@ -53,17 +72,17 @@
     "title": "What Does JAR Offer?",
     "subtitle": "Six integrated solutions covering every aspect of residential community management",
     "card1_title": "Community Management",
-    "card1_desc": "All unit and resident details in one place — organized and easy",
+    "card1_desc": "All unit and resident details in one place, organized and easy",
     "card2_title": "Maintenance & Services",
     "card2_desc": "Receive and assign maintenance requests to providers instantly",
     "card3_title": "Resident App",
-    "card3_desc": "An app connecting residents to all their needs from home",
+    "card3_desc": "An app connecting residents to all their needs wherever they are",
     "card4_title": "Financial Collection",
     "card4_desc": "Manage fees and payments with full transparency and live reports",
     "card5_title": "Smart Reports",
     "card5_desc": "Real data to help you make better decisions for your community",
     "card6_title": "Unified Platform",
-    "card6_desc": "All stakeholders in one system — no chaos, no fragmentation"
+    "card6_desc": "All stakeholders in one system, no chaos, no fragmentation"
   },
   "diff": {
     "title": "What Makes Us Different",
@@ -83,26 +102,26 @@
     "s2_title": "Add Residents & Providers",
     "s2_desc": "Automatic invitations and quick setup — everyone inside the system within hours.",
     "s3_title": "Manage Services & Payments",
-    "s3_desc": "Requests route automatically, approvals are documented, payments are secure.",
+    "s3_desc": "Requests are routed automatically, approvals are documented, payments are secure.",
     "s4_title": "Track & Make Decisions",
     "s4_desc": "Smart reports, proactive alerts, and resident satisfaction on your screen."
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "FAQ",
     "q1": "Is there a free trial period?",
-    "a1": "Yes, we offer a complete trial session with our team including a live demo before any commitment. Contact us to schedule a convenient time.",
+    "a1": "Yes, we offer a complete trial session with our team including a live demo before any commitment. Reach out to schedule a session at your convenience.",
     "q2": "Is pricing negotiable for large portfolios?",
     "a2": "Yes. For developers with large portfolios or associations with large unit counts, we offer special pricing.",
     "q3": "What is the subscription contract like?",
-    "a3": "Annual subscription with renewal option. No long-term mandatory contracts at this stage — we trust the platform's value is what keeps you.",
+    "a3": "Annual subscription with renewal option. No long-term mandatory contracts at this stage, we trust that our platform's value is what keeps you coming back.",
     "q4": "Are there any upfront setup fees?",
-    "a4": "No. The JAR team handles complete platform setup and team training as part of the annual subscription — no additional fees.",
+    "a4": "No. JAR Team handles complete platform setup and team training as part of the annual subscription, no additional fees.",
     "q5": "What level of technical support is provided?",
     "a5": "Technical support available via WhatsApp and email during business hours. For developers with large portfolios, we provide a dedicated account manager for direct contact."
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "We're here to help. Fill out the form and we'll get back to you soon.",
+    "subtitle": "We're here to help. Fill out the form and our team will reach out shortly.",
     "name": "Full Name",
     "email": "Email Address",
     "phone": "Phone Number",
@@ -126,7 +145,7 @@
     "nav_terms": "Terms & Conditions",
     "contact_label": "Contact Us",
     "whatsapp": "+966500011111",
-    "email": "hey@jar.com",
+    "email": "info@jarsaudi.com",
     "copyright": "© 2026 JAR — All rights reserved"
   }
 }

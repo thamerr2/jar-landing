@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const navLinks = [
     { key: 'home' as const, href: '#' },
-    { key: 'about_label' as const, href: '#about' },
+    { key: 'about_label' as const, href: '#whofor' },
     { key: 'services' as const, href: '#solutions' },
   ];
 
@@ -33,20 +33,24 @@ export default function Navbar() {
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href={`/${locale}`}>
+      <div className="w-full px-12 h-16 flex items-center relative">
+        {/* Logo — far right in RTL, far left in LTR */}
+        <a href={`/${locale}`} className="shrink-0">
           <Image
             src="/logo.svg"
             alt="JAR"
             width={72}
             height={36}
-            className={scrolled ? '' : 'brightness-0 invert'}
+            className={`transition-all duration-300 ${
+              scrolled
+                ? '[filter:brightness(0)_saturate(100%)_invert(30%)_sepia(82%)_saturate(607%)_hue-rotate(120deg)_brightness(84%)_contrast(102%)]'
+                : 'brightness-0 invert'
+            }`}
           />
         </a>
 
-        {/* Nav links */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Nav links — absolutely centered on the full page */}
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
           {navLinks.map(({ key, href }) => (
             <a
               key={key}
@@ -60,8 +64,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3">
+        {/* Actions — pushed to the opposite end */}
+        <div className="shrink-0 flex items-center gap-3 ms-auto">
           <button
             onClick={switchLocale}
             className={`text-sm font-medium px-3 py-1 rounded-full border transition-colors ${

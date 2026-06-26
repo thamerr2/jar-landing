@@ -26,7 +26,7 @@ export default function DeveloperDashboard() {
       {/* Header */}
       <motion.div variants={item} className="flex items-center justify-between">
         <div>
-          <p className="text-xs text-text-muted">Dashboard</p>
+          <p className="text-xs text-text-muted">{t('dev_dashboard_label')}</p>
           <p className="font-bold text-primary">{t('dev_project')}</p>
         </div>
         <div className="flex items-center gap-2">

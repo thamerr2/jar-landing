@@ -5,7 +5,19 @@ import { useState } from 'react';
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 const item = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } };
-const catIcons = ['❄️', '🚿', '⚡'];
+
+const catIcons = [
+  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M9 2a1 1 0 00-1 1v10.26a4 4 0 105.96-.01V3a1 1 0 00-1-1H9z" />
+    <path d="M12 17v.01" />
+  </svg>,
+  <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M12 2C12 2 5 10.5 5 15a7 7 0 0014 0c0-4.5-7-13-7-13z" />
+  </svg>,
+  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+    <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+  </svg>,
+];
 
 export default function ServiceManagement() {
   const t = useTranslations('demo');
@@ -34,7 +46,7 @@ export default function ServiceManagement() {
                 : 'bg-bg-secondary text-primary hover:bg-bg-secondary/80'
             }`}
           >
-            <span className="text-xl">{catIcons[i]}</span>
+            {catIcons[i]}
             <span className="text-xs font-medium">{cat}</span>
           </button>
         ))}
