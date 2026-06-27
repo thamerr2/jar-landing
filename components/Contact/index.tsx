@@ -6,10 +6,27 @@ import { motion } from 'framer-motion';
 export default function Contact() {
   const t = useTranslations('contact');
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fields, setFields] = useState({ name: '', email: '', phone: '', company: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      });
+      if (!res.ok) throw new Error('failed');
+      setSent(true);
+    } catch {
+      setError(t('error_message'));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,6 +106,8 @@ export default function Contact() {
                   type="text"
                   required
                   placeholder={t('placeholder_name')}
+                  value={fields.name}
+                  onChange={e => setFields(f => ({ ...f, name: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-primary/15 text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition"
                 />
               </div>
@@ -98,6 +117,8 @@ export default function Contact() {
                   type="email"
                   required
                   placeholder={t('placeholder_email')}
+                  value={fields.email}
+                  onChange={e => setFields(f => ({ ...f, email: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-primary/15 text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition"
                 />
               </div>
@@ -108,6 +129,8 @@ export default function Contact() {
                 <input
                   type="tel"
                   placeholder={t('placeholder_phone')}
+                  value={fields.phone}
+                  onChange={e => setFields(f => ({ ...f, phone: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-primary/15 text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition"
                 />
               </div>
@@ -116,6 +139,8 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder={t('placeholder_company')}
+                  value={fields.company}
+                  onChange={e => setFields(f => ({ ...f, company: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-primary/15 text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition"
                 />
               </div>
@@ -125,14 +150,18 @@ export default function Contact() {
               <textarea
                 rows={4}
                 placeholder={t('placeholder_message')}
+                value={fields.message}
+                onChange={e => setFields(f => ({ ...f, message: e.target.value }))}
                 className="w-full px-4 py-3 rounded-xl border border-primary/15 text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition resize-none"
               />
             </div>
+            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
             <button
               type="submit"
-              className="w-full py-4 rounded-xl bg-accent text-white font-semibold text-base hover:bg-accent-light transition-colors shadow-md shadow-accent/20"
+              disabled={loading}
+              className="w-full py-4 rounded-xl bg-accent text-white font-semibold text-base hover:bg-accent-light transition-colors shadow-md shadow-accent/20 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {t('submit')}
+              {loading ? '...' : t('submit')}
             </button>
           </motion.form>
         )}

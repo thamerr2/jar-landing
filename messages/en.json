@@ -134,7 +134,8 @@
     "placeholder_company": "Your company or community name",
     "placeholder_message": "How can we help?",
     "success_title": "Message Sent!",
-    "success_message": "Thanks for reaching out. We'll get back to you within 24 hours."
+    "success_message": "Thanks for reaching out. We'll get back to you within 24 hours.",
+    "error_message": "Something went wrong. Please try again or email us directly."
   },
   "footer": {
     "tagline": "The intelligent operating system for Saudi residential communities",
